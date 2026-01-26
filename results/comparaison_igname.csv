@@ -1,0 +1,5 @@
+,MAE,RMSE,MAPE_%
+Régression Ridge,21.16,25.36,4.42
+Forêt aléatoire,26.64,31.38,5.62
+Naïf saisonnier,27.14,32.89,5.56
+Moyenne mobile (3 mois),96.8,101.77,20.91
