@@ -8,7 +8,7 @@ Projet 100 % Python de prévision de séries temporelles : il compare plusieurs 
 
 ## Méthode
 
-1. **Données** : séries mensuelles par produit (2016 à octobre 2026).
+1. **Données** : séries mensuelles par produit (2016 à aujourd'hui).
 2. **Quatre modèles** de même signature :
    - *Naïf saisonnier* : le prix d'un mois est celui du même mois l'an dernier ;
    - *Moyenne mobile* : la moyenne des 3 derniers mois ;
@@ -26,29 +26,7 @@ Projet 100 % Python de prévision de séries temporelles : il compare plusieurs 
 
 **À lire avec prudence :** comme les données sont simulées avec une tendance et une saison régulières, un modèle simple qui capte ces deux éléments gagne facilement. Ce résultat ne dit rien de la performance sur de vrais prix, où les chocs (météo, transport, politique) sont bien plus difficiles à prévoir.
 
-## Utilisation
 
-```
-pip install -r requirements.txt
-python main.py                        # 3 produits, 6 mois
-python main.py --produit tomate --horizon 3
-python -m unittest discover -s tests  # tests
-```
-
-Les résultats (tableaux de comparaison, rapport, graphiques) sont écrits dans `results/`.
-
-## Structure
-
-```
-main.py                    ligne de commande
-prix_agricoles/
-  donnees.py               génération, chargement et mise en forme des séries
-  modeles.py               les 4 modèles
-  evaluation.py            backtest et comparaison
-  graphiques.py            graphique de prévision
-tests/test_prix.py         6 tests, dont un test d'absence de « fuite du futur »
-data/  results/
-```
 
 ## Pistes d'amélioration
 
